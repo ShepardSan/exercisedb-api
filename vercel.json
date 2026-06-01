@@ -1,36 +1,17 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "bun run build",
+  "outputDirectory": "dist",
   "rewrites": [{ "source": "(.*)", "destination": "/api" }],
   "regions": ["sfo1"],
-  "outputDirectory": "dist",
   "headers": [
     {
       "source": "(.*)",
       "headers": [
-        {
-          "key": "Access-Control-Allow-Origin",
-          "value": "*"
-        },
-        {
-          "key": "Access-Control-Allow-Headers",
-          "value": "*"
-        },
-        {
-          "key": "Access-Control-Allow-Methods",
-          "value": "GET,POST,OPTIONS"
-        },
-        {
-          "key": "Cache-Control",
-          "value": "s-maxage=300, stale-while-revalidate"
-        },
-        {
-          "key": "Author",
-          "value": "ExerciseDB API"
-        },
-        {
-          "key": "Github",
-          "value": "https://github.com/exercisedb/exercisedb-api"
-        }
+        { "key": "Access-Control-Allow-Origin", "value": "*" },
+        { "key": "Access-Control-Allow-Headers", "value": "*" },
+        { "key": "Access-Control-Allow-Methods", "value": "GET,POST,OPTIONS" },
+        { "key": "Cache-Control", "value": "s-maxage=300, stale-while-revalidate" }
       ]
     }
   ]
