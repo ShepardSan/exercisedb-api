@@ -1,8 +1,12 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "buildCommand": "bun run build",
-  "outputDirectory": "dist",
-  "rewrites": [{ "source": "(.*)", "destination": "/api" }],
+  "builds": [
+    {
+      "src": "src/app.ts",
+      "use": "@vercel/node"
+    }
+  ],
+  "rewrites": [{ "source": "(.*)", "destination": "/src/app.ts" }],
   "regions": ["sfo1"],
   "headers": [
     {
